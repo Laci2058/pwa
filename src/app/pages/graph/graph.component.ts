@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { log } from 'console';
-import * as d3 from 'd3';
+import * as Plot from '@observablehq/plot';
 
 @Component({
     selector: 'app-graph',
     templateUrl: './graph.component.html',
-    styleUrls: ['./graph.component.scss']
+    styleUrls: ['./graph.component.scss'],
 })
 export class GraphComponent implements OnInit {
 
@@ -37,19 +36,26 @@ export class GraphComponent implements OnInit {
     }
     */
 
+    drawGraph() {
+        //dátumok, értékek
+        let alma: { date: string, rate: number }[] = []
+        Object.entries(this.asd).forEach(([key, value]) => {
+            Object.values(value).forEach(val => {
+                alma.push({ date: key, rate: val })
+            })
+        })
 
-
-    /*chart = LineChart(this.rates, {
-        x: d => d.date,
-        y: d => d.close,
-        yLabel: "↑ Daily close ($)",
-        width: 800,
-        height: 500,
-        color: "steelblue"
-      })*/
+        let graf = Plot.plot({
+            marks: [
+                Plot.line(alma, { x: "date", y: "rate" }),
+            ]
+        })
+        console.log(graf.outerHTML);
+        return graf
+    }
     ngOnInit(): void {
-        console.log(this.asd)
-        Object.entries(this.asd).forEach(([key, value]) => console.log(`date: ${key} rate: ${value.USD}`)) //dátumok, értékek
+        let d = document.getElementById('svg-container')
+        d?.append(this.drawGraph())
     }
 
 }
