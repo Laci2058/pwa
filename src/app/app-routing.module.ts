@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './pages/main/main.component';
-import { GraphComponent } from './pages/graph/graph.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
-    {path:'main', component: MainComponent},
-    { path: 'graph', component: GraphComponent },
-    { path: '', redirectTo:'/main', pathMatch: 'full' }
+    {
+        path: 'main',
+        loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule)
+    },
+    {
+        path: 'graph',
+        loadChildren: () => import('./pages/graph/graph.module').then(m => m.GraphModule)
+    },
+    { path: '', redirectTo: '/main', pathMatch: 'full' }
 ]
 
 @NgModule({
