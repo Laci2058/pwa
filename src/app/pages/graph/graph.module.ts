@@ -6,7 +6,6 @@ import { GraphComponent } from './graph.component';
 
 @NgModule({
     declarations: [
-        GraphComponent
     ],
     imports: [
         CommonModule,
