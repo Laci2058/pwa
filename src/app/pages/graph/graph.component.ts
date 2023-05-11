@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Plot from '@observablehq/plot';
+import { ValutaService } from '../../services/valuta.service';
 
 @Component({
     selector: 'app-graph',
@@ -8,7 +9,9 @@ import * as Plot from '@observablehq/plot';
 })
 export class GraphComponent implements OnInit {
 
-    constructor() { }
+    constructor(private valutaService: ValutaService) {
+        this.valutaService.getData()
+     }
 
     rates = [{
         "success": true,
@@ -48,9 +51,10 @@ export class GraphComponent implements OnInit {
         let graf = Plot.plot({
             marks: [
                 Plot.line(alma, { x: "date", y: "rate" }),
-            ]
+            ],
+            y:{grid:true}
         })
-        console.log(graf.outerHTML);
+        
         return graf
     }
     ngOnInit(): void {

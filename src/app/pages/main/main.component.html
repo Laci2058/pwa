@@ -1,9 +1,35 @@
-<p>main works!</p>
 <div class="content">
-    <form>
-        <input><select>
-            <option>asd</option>
-            <option>dsa</option>
-        </select>
+    <form class="input-form">
+        <div class="mat-field-holder">
+            <mat-form-field class="input" appearance="outline">
+                <mat-label>From mennyi</mat-label>
+                <input matInput placeholder="Ex. It makes me feel...">
+            </mat-form-field>
+
+            <mat-form-field class="select" appearance="outline">
+                <mat-label>From</mat-label>
+                <mat-select>
+                    <ng-container *ngFor="let option of lofasz2">
+                        <mat-option [value]="option">{{option}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="mat-field-holder">
+            <mat-form-field class="input" appearance="outline">
+                <mat-label>To mennyi</mat-label>
+                <input matInput placeholder="Ex. It makes me feel...">
+            </mat-form-field>
+
+            <mat-form-field class="select" appearance="outline">
+                <mat-label>To</mat-label>
+                <mat-select>
+                    <ng-container *ngFor="let option of lofasz2">
+                        <mat-option [value]="option">{{option}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </form>
 </div>

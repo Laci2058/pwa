@@ -11,10 +11,17 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
+import { MainComponent } from './pages/main/main.component';
+import { GraphComponent } from './pages/graph/graph.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        MainComponent,
+        GraphComponent
     ],
     imports: [
         BrowserModule,
@@ -32,6 +39,10 @@ import { AppRoutingModule } from './app-routing.module';
         }),
         BrowserAnimationsModule,
         AppRoutingModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatInputModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent]

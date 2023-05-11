@@ -8,8 +8,7 @@ import { GraphComponent } from './graph.component';
     declarations: [
     ],
     imports: [
-        CommonModule,
-        GraphRoutingModule
+        CommonModule
     ]
 })
 export class GraphModule { }
