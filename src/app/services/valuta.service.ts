@@ -1,29 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from, switchMap } from 'rxjs';
+import { ValutaApiResponse } from '../models/valuta-api';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ValutaService {
-
-    constructor() { }
-
-    getData() {
-        /* let xhr = new XMLHttpRequest()
- 
-          xhr.open('GET', 'http://api.napiarfolyam.hu?bank=kh&valuta=eur&datum=20230505&datumend=20230511&valutanem=valuta')
-          xhr.setRequestHeader('Referrer-Policy', 'origin')
-          xhr.send()*/
+    constructor(private http: HttpClient) { }
 
 
-        /*  fetch('http://api.napiarfolyam.hu?bank=kh&valuta=eur&datum=20230505&datumend=20230511&valutanem=valuta',
-              {
-                  method:'GET',
-                  mode:'no-cors',
-                  referrerPolicy: "no-referrer",
-                  headers: {
-                      'Access-Control-Allow-Origin':'localhost:4200',
-                  }
-              })*/
+    url = 'https://api.currencyapi.com/v3/latest?apikey=7W5Cymeen3mYa8KycJDEM117lOL1VOUbM8vJ0pLL&currencies=HUF'
+    //'https://api.currencyapi.com/v3/latest?apikey=7W5Cymeen3mYa8KycJDEM117lOL1VOUbM8vJ0pLL&currencies=HUF'
+    //'https://api.currencyapi.com/v3/latest?apikey=7W5Cymeen3mYa8KycJDEM117lOL1VOUbM8vJ0pLL&currencies=HUF&base_currency=USD'
+
+    getData(fromCurrency:string ='EUR', toCurrency: string = 'HUF') {
+        return this.http.get<ValutaApiResponse>(`https://api.currencyapi.com/v3/latest?apikey=${environment.API_KEY}&currencies=${toCurrency}&base_currency=${fromCurrency}`)
     }
 }

@@ -14,8 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './pages/main/main.component';
 import { GraphComponent } from './pages/graph/graph.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import {MatInputModule} from '@angular/material/input';
         MatNativeDateModule,
         MatSelectModule,
         MatInputModule,
+        HttpClientModule
 
     ],
     providers: [],

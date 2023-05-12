@@ -3,13 +3,13 @@
         <div class="mat-field-holder">
             <mat-form-field class="input" appearance="outline">
                 <mat-label>From mennyi</mat-label>
-                <input matInput placeholder="Ex. It makes me feel...">
+                <input [(ngModel)]="fromInputElement" name="fromInputElement" type="number" matInput placeholder="1">
             </mat-form-field>
 
             <mat-form-field class="select" appearance="outline">
                 <mat-label>From</mat-label>
-                <mat-select>
-                    <ng-container *ngFor="let option of lofasz2">
+                <mat-select [(value)]="fromSelectedElement">
+                    <ng-container *ngFor="let option of currencies">
                         <mat-option [value]="option">{{option}}</mat-option>
                     </ng-container>
                 </mat-select>
@@ -19,17 +19,20 @@
         <div class="mat-field-holder">
             <mat-form-field class="input" appearance="outline">
                 <mat-label>To mennyi</mat-label>
-                <input matInput placeholder="Ex. It makes me feel...">
+                <input [value]="toInputElement" type="number" matInput placeholder="Ex. It makes me feel...">
             </mat-form-field>
 
             <mat-form-field class="select" appearance="outline">
                 <mat-label>To</mat-label>
-                <mat-select>
-                    <ng-container *ngFor="let option of lofasz2">
+                <mat-select [value]="toSelectedElement">
+                    <ng-container *ngFor="let option of currencies">
                         <mat-option [value]="option">{{option}}</mat-option>
                     </ng-container>
                 </mat-select>
             </mat-form-field>
         </div>
+
+        <button mat-stroked-button (click)="submit()">Convert</button>
     </form>
+
 </div>

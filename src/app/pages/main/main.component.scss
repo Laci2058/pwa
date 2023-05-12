@@ -1,6 +1,5 @@
 .content {
     position: absolute;
-    border: 1px solid black;
     width: 50%;
     height: 30vh;
     top: 25%;
@@ -8,7 +7,8 @@
     transform: translate(-50%, -25%);
 }
 .input{
-    width: 70%;
+    width: 69%;
+    padding-right: 1%;
 }
 .select{
     width: 30%;
@@ -17,6 +17,4 @@
     flex-direction: row;
     text-align: center;
     width: 100%;
-    border: 1px solid black;
-
 }
