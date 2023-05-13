@@ -19,7 +19,7 @@
         <div class="mat-field-holder">
             <mat-form-field class="input" appearance="outline">
                 <mat-label>To mennyi</mat-label>
-                <input [value]="toInputElement" type="number" matInput placeholder="Ex. It makes me feel...">
+                <input readonly="true" [value]="toInputElement" type="number" matInput placeholder="Ex. It makes me feel...">
             </mat-form-field>
 
             <mat-form-field class="select" appearance="outline">
@@ -33,6 +33,11 @@
         </div>
 
         <button mat-stroked-button (click)="submit()">Convert</button>
+
+        <button class="fav-icon" mat-icon-button (click)="favorite()">
+            <mat-icon>{{fav}}</mat-icon>
+        </button>
+        
     </form>
 
 </div>
