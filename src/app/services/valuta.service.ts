@@ -1,7 +1,7 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ValutaApiResponse } from '../models/valuta-api';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 import { catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -17,6 +17,22 @@ export class ValutaService {
                 catchError(this.handleError)
             )
     }
+
+    napiapi() {        
+        let url = 'http://api.napiarfolyam.hu?valuta=eur&datum=20230505&datumend=20230511&valutanem=valuta&bank=kh'
+        return this.http.get(url, {
+            headers: new HttpHeaders({
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                    'Content-Type': 'application/xml',
+                    'Access-Control-Allow-Origin': '*'
+                }
+            )
+        })
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
     private handleError(error: HttpErrorResponse) {
         if (error.status === 0) {
             // A client-side or network error occurred. Handle it accordingly.

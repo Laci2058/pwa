@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="saved-content">
+        <ng-container *ngIf="savedItems.length==0;then empty else saved"></ng-container>
+        <ng-template #empty>
+            <div class="empty">
+                <h2>Még nincsenek mentett adatok</h2>
+            </div>
+        </ng-template>
+        <ng-template #saved>
+            <ng-container *ngFor="let item of savedItems">
+                <mat-card>
+                    <div class="change">
+                        <mat-card-title class="quantity">{{item.from}}</mat-card-title>
+                        <mat-card-title class="arrow-icon"><mat-icon>arrow_right_alt</mat-icon></mat-card-title>
+                        <mat-card-title class="value">{{item.to}}</mat-card-title>
+                    </div>
+    
+                    <div class="change">
+                        <p class="quantity"> {{item.quantity}} </p>
+                        <p class="arrow-icon"><mat-icon>arrow_right_alt</mat-icon></p>
+                        <p class="value"> {{item.value}}</p>
+                    </div>
+    
+                    {{item.one}}
+                    <mat-card-actions>
+                        <button mat-icon-button (click)="del(item.id)"><mat-icon id="del">delete</mat-icon></button>
+                    </mat-card-actions>
+                </mat-card>
+            </ng-container>
+        </ng-template>
+    </div>
+</div>

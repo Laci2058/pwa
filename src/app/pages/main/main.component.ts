@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValutaService } from '../../services/valuta.service';
 import { DatabaseService } from 'src/app/services/database.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-main',
@@ -9,7 +10,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class MainComponent implements OnInit {
 
-    constructor(private valutaService: ValutaService, private databaseService: DatabaseService) {
+    constructor(private valutaService: ValutaService, private databaseService: DatabaseService,private snackbar: MatSnackBar) {
     }
 
     fromSelectedElement = "EUR"
@@ -37,11 +38,17 @@ export class MainComponent implements OnInit {
 
     favorite() {
         if (this.fav === 'favorite_border') {
-            this.databaseService.save(this.fromSelectedElement, this.toSelectedElement, this.toInputElement, this.toInputElement,this.onlyOne)
+            this.databaseService.save(this.fromSelectedElement, this.toSelectedElement, this.fromInputElement, this.toInputElement, this.onlyOne)
             this.fav = 'favorite'
+            this.snackbar.open('Átváltás elmentve', ' ', {
+                duration: 3000
+              })
         } else {
             this.databaseService.undo()
             this.fav = 'favorite_border'
+            this.snackbar.open('Átváltás törölve', '', {
+                duration: 3000
+              })
         }
     }
 

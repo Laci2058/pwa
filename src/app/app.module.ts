@@ -17,12 +17,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { SavedComponent } from './pages/saved/saved.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
     declarations: [
         AppComponent,
         MainComponent,
-        GraphComponent
+        GraphComponent,
+        SavedComponent
     ],
     imports: [
         BrowserModule,
@@ -43,7 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
         MatNativeDateModule,
         MatSelectModule,
         MatInputModule,
-        HttpClientModule
+        HttpClientModule,
+        MatCardModule,
+        MatSnackBarModule
 
     ],
     providers: [],
