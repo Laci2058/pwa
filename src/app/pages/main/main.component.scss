@@ -6,29 +6,41 @@
     left: 50%;
     transform: translate(-50%, -25%);
 }
-.input{
+
+.input {
     width: 69%;
     padding-right: 1%;
 }
-.select{
+
+.select {
     width: 30%;
 }
+
 .mat-field-holder {
     flex-direction: row;
     text-align: center;
     width: 100%;
 }
-.fav-icon{
+
+.fav-icon {
     float: right;
 }
 
+::ng-deep .mat-select-value {
+    color: #0F172A !important;
+}
+::ng-deep mat-option{
+    color: #0F172A !important;
+}
+
 @media (max-width: 700px) {
-    .content{
+    .content {
         width: 80%;
     }
 }
+
 @media (max-width: 599px) {
-    .content{
+    .content {
         width: 100%;
     }
 }

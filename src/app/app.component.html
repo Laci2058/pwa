@@ -1,17 +1,16 @@
 <mat-toolbar>
 	<mat-toolbar-row>
 		<button mat-icon-button onclick="this.blur()">
-			<mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+			<mat-icon id="menu" (click)="sidenav.toggle();">menu</mat-icon>
 		</button>
-		<h1>asd</h1>
 	</mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
 	<mat-sidenav #sidenav mode="over" fixedInViewport="true">
 		<mat-nav-list>
-			<a mat-list-item (click)="sidenav.toggle();" routerLink="main">Kezdőlap</a>
-			<a mat-list-item (click)="sidenav.toggle();" routerLink="graph">Grafikon</a>
-			<a mat-list-item (click)="sidenav.toggle();" routerLink="saved">Mentett előzmények</a>
+			<a style="color: #CED0CE;" mat-list-item (click)="sidenav.toggle();" routerLink="main">Kezdőlap</a>
+			<a style="color: #CED0CE;" mat-list-item (click)="sidenav.toggle();" routerLink="graph">Grafikon</a>
+			<a style="color: #CED0CE;" mat-list-item (click)="sidenav.toggle();" routerLink="saved">Mentett előzmények</a>
 		</mat-nav-list>
 	</mat-sidenav>
 	<mat-sidenav-content>

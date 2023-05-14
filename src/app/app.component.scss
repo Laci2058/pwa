@@ -1,5 +1,10 @@
 mat-sidenav {
     width: 30%;
+    background-color: #475841;
+}
+
+mat-toolbar {
+    background-color: #0F172A;
 }
 
 mat-sidenav {
@@ -8,10 +13,17 @@ mat-sidenav {
 
 mat-sidenav-content {
     height: calc(100vh - 64px);
+    color: #0F172A;
+    background-color: #E4F0FF;
 }
-.sidenav-div{
+
+.sidenav-div {
     height: calc(100vh - 64px);
     align-content: center;
+}
+
+#menu {
+    color: #CED0CE;
 }
 
 @media (max-width: 599px) {
@@ -26,7 +38,8 @@ mat-sidenav-content {
     mat-sidenav-content {
         height: calc(100vh - 56px);
     }
-    .sidenav-div{
+
+    .sidenav-div {
         height: calc(100vh - 56px);
     }
 }
