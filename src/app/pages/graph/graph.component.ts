@@ -11,7 +11,9 @@ export class GraphComponent implements OnInit {
 
     constructor(private valutaService: ValutaService) {
         this.valutaService.getData()
-     }
+    }
+
+    //mivel az api-nak ez a funkciója fizetős sajnos nem tudtam megvalósítani
 
     rates = [{
         "success": true,
@@ -32,12 +34,7 @@ export class GraphComponent implements OnInit {
         }
     }]
     asd = this.rates[0].rates
-    /*
-    Object{
-        date: 2012-04-01
-        rate: 1.333
-    }
-    */
+
 
     drawGraph() {
         //dátumok, értékek
@@ -52,9 +49,9 @@ export class GraphComponent implements OnInit {
             marks: [
                 Plot.line(alma, { x: "date", y: "rate" }),
             ],
-            y:{grid:true}
+            y: { grid: true }
         })
-        
+
         return graf
     }
     ngOnInit(): void {
