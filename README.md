@@ -1,27 +1,34 @@
-# CurrencyConverter
+# Currency Converter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Egyetemi kurzusra készített projekt.
 
-## Development server
+## Funkciók
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Valuták közötti átváltás
+- Grafikon az elmúlt x nap árfolyamváltozásairól
+- Átváltások elmentése  
 
-## Code scaffolding
+## Technológiák
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 13
+- IndexedDB
+- API: https://currencyapi.com
 
-## Build
+## Követelmények
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Rxjs használata
+- Offline mód
+- Reszponzivitás
+- Service workerek használata
+- Indexed db használata
+- API lekérések (public, vagy saját backendről)
 
-## Running unit tests
+## Képernyőképek
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![pwa_main](https://github.com/Laci2058/pwa/assets/90342307/c8c3a265-091d-4a27-b9e0-03de572cc4fd)
+![pwa_graph2](https://github.com/Laci2058/pwa/assets/90342307/2ab8428b-5744-403e-acde-050fa6de5581)
+![saved](https://github.com/Laci2058/pwa/assets/90342307/5e6cf6de-aaa5-4268-8b32-49fcdf19a420)
 
-## Running end-to-end tests
+## Hiányosságok
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Grafikonon megjelenő adatok jelenleg statikusak, mivel az API ingyenesen használható verziójával nem lehet lekérni az elmúlt napok árfolyamváltozásait.
